@@ -20,6 +20,12 @@ cecho() {
   echo "$text"
 }
 
+file=listRemainders.txt
+
+if [ ! -e "$file" ] ; then
+    touch "$file"
+fi
+
 #display 1 for taking remainder and 2 for viewing remainders 3 to edit
 cecho b "1: take remainder"
 cecho g "2: view remainders"
