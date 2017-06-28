@@ -5,8 +5,12 @@
 # hipo@noah:~$ date
 # Sun Apr  1 20:37:41 EEST 2012
 
-gmail_username="akhilvantipalli";
-gmail_password="B@)T@\$T3m@N+^";
+echo -n "username: "
+read gmail_username
+echo -n "password: "
+stty -echo
+read gmail_password
+stty echo
 # gmail atom url
 gmail_atom_url='https://mail.google.com/mail/feed/atom';
 # set the mail client you prefer  or action if new messages are in gmail mailbox
