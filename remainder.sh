@@ -39,11 +39,9 @@ read CHOICE
 #check CHOICE 1/2/3 and do appropriate operation
 if [ "$CHOICE" -eq 1 ]; then
 #taking remainder code
-cecho y "enter date "
-read DATE
 cecho y "enter remainder"
 read REMAINDER
-echo "$DATE --> $REMAINDER">> listRemainders.txt   
+echo "$REMAINDER">> listRemainders.txt   
 elif [ "$CHOICE" -eq 2 ]; then
 #for listing remainders
    COUNT=$(wc -l < listRemainders.txt)
