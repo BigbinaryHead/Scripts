@@ -11,11 +11,12 @@ echo -n "password: "
 stty -echo
 read gmail_password
 stty echo
+echo -n ""
 # gmail atom url
 gmail_atom_url='https://mail.google.com/mail/feed/atom';
 # set the mail client you prefer  or action if new messages are in gmail mailbox
 
 curl -u ${gmail_username}@gmail.com:${gmail_password} --silent "$gmail_atom_url" | tr -d '\n' | awk -F '<entry>' '{for (i=2; i<=NF; i++) {
 print $i
-}}' | sed -n "s/<title>\(.*\)<\/title.*name>\(.*\)<\/name>.*/\2 â€“ \1/p"
+}}' | sed -n "s/<title>\(.*\)<\/title.*name>\(.*\)<\/name>.*/\2 \1/p"
 
